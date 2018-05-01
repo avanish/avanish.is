@@ -5,6 +5,8 @@ expect << EOF
   spawn git push deploy master
   expect "Are you sure you want to continue connecting (yes/no)? "
   send "yes\r"
+  expect "password:"
+  send $PASS\r
   expect eof
 EOF
 
