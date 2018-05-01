@@ -1,18 +1,12 @@
 #!/usr/bin/bash
 
-git remote add deploy ssh://avanish@$IP:$DEPLOY_DIR
-git push deploy master
-# while read line
-# do
-#     expect << EOF
-#       spawn git push deploy master
-#       expect "Are you sure you want to continue connecting (yes/no)? "
-#       send "yes\r"
-#       expect eof
-# EOF
-#     echo
-#     echo
-# done
+git remote add deploy avanish@$IP:$DEPLOY_DIR
+expect << EOF
+  spawn git push deploy master
+  expect "Are you sure you want to continue connecting (yes/no)? "
+  send "yes\r"
+  expect eof
+EOF
 
 # # eval "$(ssh-agent -s)" # Start ssh-agent cache
 # # chmod 600 .travis/id_rsa # Allow read access to the private key
