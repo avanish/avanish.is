@@ -9,6 +9,7 @@ before_install:
   -in pixie_rsa.enc -out ~/.ssh/pixie_rsa -d
 - chmod 600 ~/.ssh/pixie_rsa
 - eval $(ssh-agent)
+- apt-get install sshpass
 - sshpass -p $PASSPHRASE ssh-add ~/.ssh/pixie_rsa
 - cp ssh_config ~/.ssh/config
 - npm install -g hexo-cli
