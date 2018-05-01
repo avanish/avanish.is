@@ -18,6 +18,6 @@ script:
 - hexo clean
 - hexo generate
 - hexo deploy
-after_install:
+after_success:
 - git remote add deploy avanish@$IP:$DEPLOY_DIR
 - git push deploy master
