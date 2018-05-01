@@ -1,0 +1,24 @@
+menu:
+    Home: /coding
+    Blog: /blogging
+    Archive: /archives/
+    GitHub: https://github.com/avanish
+    Gitlab: https://gitlab.com/avanishshrestha
+    Rss: /atom.xml
+
+favicon: /favicon.png
+logo: /favicon.png
+
+home: /coding
+
+# Comment
+# e.g disqus: seansun
+disqus:
+duoshuo:
+
+# Analytics
+# google-analytics:
+# ga: UA-xxxxxxxx-x
+
+# Copyright Infomation
+startyear: 2018
