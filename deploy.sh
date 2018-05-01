@@ -7,13 +7,12 @@ do
     expect << EOF
       spawn git push deploy master
       expect "Are you sure you want to continue connecting (yes/no)? "
-      send "yes"
+      send "yes\r"
       expect eof
-    EOF
+EOF
     echo
     echo
 done
-
 
 # # eval "$(ssh-agent -s)" # Start ssh-agent cache
 # # chmod 600 .travis/id_rsa # Allow read access to the private key
