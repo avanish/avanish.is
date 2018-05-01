@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 
 git remote add deploy avanish@$IP:$DEPLOY_DIR
 
