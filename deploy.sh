@@ -1,12 +1,10 @@
 #!/usr/bin/bash
 
 git remote add deploy avanish@$IP:$DEPLOY_DIR
-sudo apt-get install expect
 expect << EOF
   spawn git push deploy master
   expect "Are you sure you want to continue connecting (yes/no)? "
   send "yes"
-  expect eof
 EOF
 
 # # eval "$(ssh-agent -s)" # Start ssh-agent cache
