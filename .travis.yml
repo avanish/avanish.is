@@ -6,8 +6,8 @@ branches:
   - master
 before_install:
 - openssl aes-256-cbc -K $encrypted_792626dc5472_key -iv $encrypted_792626dc5472_iv
-  -in pixie_rsa.enc -out ~/.ssh/pixie_rsa -d
-- chmod 600 ~/.ssh/pixie_rsa
+  -in phoebe_rsa_nokey.enc -out ~\/.ssh/phoebe_rsa_nokey -d
+- chmod 600 ~/.ssh/phoebe_rsa_nokey
 - cp ssh_config ~/.ssh/config
 - npm install -g hexo-cli
 install:
@@ -19,8 +19,6 @@ script:
 - hexo clean
 - hexo generate
 - hexo deploy
-deploy:
-  provider: script
-  script: bash scripts/deploy.sh
-  on:
-    branch: master
+after_install:
+- git remote add deploy avanish@$IP:$DEPLOY_DIR
+- git push deploy master

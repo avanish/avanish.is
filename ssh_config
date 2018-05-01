@@ -1,4 +1,0 @@
-Host pixie
-  HostName 35.198.247.14
-  User abu
-  IdentityFile ~/.ssh/pixie_rsa
