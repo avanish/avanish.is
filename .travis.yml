@@ -10,7 +10,7 @@ before_install:
 - chmod 600 ~/.ssh/pixie_rsa
 - eval $(ssh-agent)
 - sudo apt-get install sshpass
-- sshpass -p $PASSPHRASE ssh-add ~/.ssh/pixie_rsa
+- sshpass -p 'nakara12' ssh-add ~/.ssh/pixie_rsa
 - cp ssh_config ~/.ssh/config
 - npm install -g hexo-cli
 install:
