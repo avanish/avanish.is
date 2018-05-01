@@ -6,8 +6,8 @@ branches:
   - master
 before_install:
 - openssl aes-256-cbc -K $encrypted_792626dc5472_key -iv $encrypted_792626dc5472_iv
-  -in phoebe_rsa_nokey.enc -out ~/.ssh/phoebe_rsa_nokey -d
-- chmod 600 ~/.ssh/phoebe_rsa_nokey
+  -in .travis/pixie_travis.enc -out ~/.ssh/pixie_travis -d
+- chmod 600 ~/.ssh/pixie_travis
 - sudo apt-get install -y expect
 - npm install -g hexo-cli
 install:
@@ -19,11 +19,9 @@ script:
 - hexo clean
 - hexo generate
 - hexo deploy
-# after_success:
-# - git remote add deploy avanish@$IP:$DEPLOY_DIR
 deploy:
   provider: script
   skip_cleanup: true
-  script: bash deploy.sh
+  script: bash .travis/deploy.sh
   on:
     branch: master
