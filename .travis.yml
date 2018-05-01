@@ -1,0 +1,31 @@
+language: node_js
+node_js:
+    - "8.9.4"
+
+branches:
+    only:
+        - master
+        
+before_install:
+    - npm install -g hexo-cli
+install:
+    - npm install
+
+before_script:
+    - git config --global user.name 'Avanish Shrestha'
+    - git config --global user.email 'avanissh@gmail.com'
+
+script:
+    - hexo clean
+    - hexo generate
+    - hexo deploy
+
+# after_success:
+#     - mkdir .deploy
+#     - cd .deploy
+#     - git init
+#     - git remote add origin $DEPLOY_REPO
+#     - cp -r ../public/* .
+#     - git add -A .
+#     - git commit -m 'Site updated'
+#     - git push --force --quiet origin master
