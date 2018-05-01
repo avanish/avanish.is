@@ -10,7 +10,7 @@ expect << EOF
   expect eof
 EOF
 
-ssh abu@$IP -i ~/.ssh/pixie_rsa <<EOF
+ssh abu@$IP -i ~/.ssh/pixie_travis <<EOF
   cd $DEPLOY_DIR
   npm install -y
   hexo generate
