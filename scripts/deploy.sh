@@ -1,7 +1,4 @@
-#!/bin/bash
-
 eval "$(ssh-agent -s)"
-
 expect << EOF
   spawn ssh-add ~/.ssh/pixie_rsa
   expect "Enter passphrase"
