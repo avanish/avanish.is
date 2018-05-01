@@ -22,6 +22,7 @@ script:
 # - git remote add deploy avanish@$IP:$DEPLOY_DIR
 deploy:
   provider: script
+  skip_cleanup: true
   script: bash deploy.sh
   on:
     branch: master
