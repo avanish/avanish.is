@@ -5,6 +5,13 @@ branches:
   only:
   - master
 before_install:
+- openssl aes-256-cbc -K $encrypted_792626dc5472_key -iv $encrypted_792626dc5472_iv
+  -in .travis/ssh_config.enc -out ~/.ssh/config -d
+- openssl aes-256-cbc -K $encrypted_792626dc5472_key -iv $encrypted_792626dc5472_iv
+  -in .travis/pixie_rsa.enc -out ~/.ssh/pixie_rsa -d
+- chmod 600 ~/.ssh/pixie_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/pixie_rsa
 - npm install -g hexo-cli
 install:
 - npm install
@@ -15,3 +22,8 @@ script:
 - hexo clean
 - hexo generate
 - hexo deploy
+deploy:
+  provider: script
+  script: bash scripts/deploy.sh
+  on:
+    branch: master
