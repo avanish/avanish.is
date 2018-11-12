@@ -2,7 +2,8 @@
 
 git remote add deploy ssh://abu@$IP:$DEPLOY_DIR
 expect << EOF
-  git status
+  spwan git stash
+  expect eof
   spawn git push deploy master
   expect "Are you sure you want to continue connecting (yes/no)? "
   send "yes\r"
