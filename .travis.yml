@@ -21,7 +21,7 @@ script:
 - hexo deploy
 deploy:
   provider: script
-  skip_cleanup: true
+  skip_cleanup: false
   script: bash .travis/deploy.sh
   on:
     branch: master
