@@ -1,13 +1,11 @@
-services:
-  - node:latest
-before_script:
-  - npm install -g hexo-cli
-  - npm install
-deploy_production:
-  stage: deploy
-  environment: Production
+job:
   only:
     - master
+  services:
+    - node:latest
+  before_script:
+    - npm install -g hexo-cli
+    - npm install
   script:
     - hexo clean
     - hexo generate
