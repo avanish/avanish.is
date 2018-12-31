@@ -1,5 +1,5 @@
 services:
-  - node:8.12.0
+  - node:latest
 before_script:
   - npm install -g hexo-cli
   - npm install
