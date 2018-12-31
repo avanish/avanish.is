@@ -7,12 +7,13 @@ branches:
 before_install:
 - openssl aes-256-cbc -K $encrypted_22006aa8d15a_key -iv $encrypted_22006aa8d15a_iv
   -in .travis/avanish_rsa.enc -out ~/.ssh/avanish_rsa -d
+- ls ~/.ssh
 - eval "$(ssh-agent -s)"
 - chmod 600 ~/.ssh/avanish_rsa
 - sudo apt-get install -y expect
 - npm install -g hexo-cli
 install:
-- npm install
+- npm install -y
 before_script:
 - git config --global user.name 'Avanish Shrestha'
 - git config --global user.email 'avanissh@gmail.com'
