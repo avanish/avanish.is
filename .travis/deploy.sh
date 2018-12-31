@@ -1,6 +1,10 @@
 #!/usr/bin/bash
 
+git remote add deploy ssh://abu@$IP:$DEPLOY_DIR
 expect << EOF
+  spawn ssh-add ~/.ssh/avanish_rsa
+  expect "Enter passphrase for /home/travis/.ssh/avanish_rsa: "
+  send $PASS\r
   spawn git stash
   expect eof
   spawn git push deploy master
