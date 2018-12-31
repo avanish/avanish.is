@@ -1,15 +1,13 @@
 language: node_js
 node_js:
-- 8.9.4
+- 8.12.0
 branches:
   only:
   - master
 before_install:
 - openssl aes-256-cbc -K $encrypted_22006aa8d15a_key -iv $encrypted_22006aa8d15a_iv
-  -in avanish_rsa.enc -out ~\/.ssh/avanish_rsa -d
-- openssl aes-256-cbc -K $encrypted_792626dc5472_key -iv $encrypted_792626dc5472_iv
-  -in .travis/pixie_travis.enc -out ~/.ssh/pixie_travis -d
-- chmod 600 ~/.ssh/pixie_travis
+  -in .travis/avanish_rsa.enc -out ~/.ssh/avanish_rsa -d
+- chmod 600 ~/.ssh/avanish_rsa
 - sudo apt-get install -y expect
 - npm install -g hexo-cli
 install:
