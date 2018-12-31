@@ -11,3 +11,4 @@ deploy_production:
     - hexo clean
     - hexo generate
     - hexo deploy
+    - bash .travis/deploy.sh
