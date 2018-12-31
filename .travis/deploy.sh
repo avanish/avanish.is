@@ -1,6 +1,10 @@
 #!/usr/bin/bash
 
+git config --global user.name 'Avanish Shrestha'
+git config --global user.email 'avanissh@gmail.com'
 git remote add deploy ssh://abu@$IP:$DEPLOY_DIR
+git remote -v
+git status
 expect << EOF
   spawn ssh-add /home/travis/.ssh/avanish_rsa
   expect "Enter passphrase for /home/travis/.ssh/avanish_rsa: "
@@ -8,13 +12,9 @@ expect << EOF
   expect eof
   spawn git stash
   expect eof
-  spawn git config --bool core.bare true
-  expect eof
   spawn git push deploy master
   expect "Are you sure you want to continue connecting (yes/no)? "
   send "yes\r"
-  expect "password:"
-  send $PASS\r
   expect eof
 EOF
 
