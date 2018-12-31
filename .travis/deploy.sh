@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-git remote add deploy ssh://abu@$IP:$DEPLOY_DIR
 expect << EOF
   spawn git stash
   expect eof
