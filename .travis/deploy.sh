@@ -5,6 +5,7 @@ expect << EOF
   spawn ssh-add /home/travis/.ssh/avanish_rsa
   expect "Enter passphrase for /home/travis/.ssh/avanish_rsa: "
   send $PASS\r
+  expect eof
   spawn git stash
   expect eof
   spawn git push deploy master
