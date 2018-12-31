@@ -8,6 +8,8 @@ expect << EOF
   expect eof
   spawn git stash
   expect eof
+  spawn git config receive.denyCurrentBranch ignore
+  expect eof
   spawn git push deploy master
   expect "Are you sure you want to continue connecting (yes/no)? "
   send "yes\r"
