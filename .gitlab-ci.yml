@@ -1,12 +1,8 @@
+services:
+  - node:8.12.0
 before_script:
-# - openssl aes-256-cbc -K $encrypted_792626dc5472_key -iv $encrypted_792626dc5472_iv
-#   -in .travis/pixie_travis.enc -out ~/.ssh/pixie_travis -d
-# - chmod 600 ~/.ssh/pixie_travis
-# - apt-get install -y expect
-- npm install -g hexo-cli
-- npm install
-# - git config --global user.name 'Avanish Shrestha'
-# - git config --global user.email 'avanissh@gmail.com'
+  - npm install -g hexo-cli
+  - npm install
 deploy_production:
   stage: deploy
   environment: Production
