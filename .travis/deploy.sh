@@ -12,7 +12,7 @@ expect << EOF
   expect eof
 EOF
 
-ssh -t abu@$IP -i ~/.ssh/pixie_travis <<EOF
+ssh -t abu@$IP -i ~/.ssh/avanish_rsa <<EOF
   cd $DEPLOY_DIR
   npm install -y
   hexo clean
