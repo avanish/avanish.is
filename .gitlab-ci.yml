@@ -3,7 +3,7 @@ before_script:
   - apt-get update
   - apt-get install -y curl
   - gitlab-runner -u root
-  - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+  - curl -sL https://deb.nodesource.com/setup_10.x
   - apt-get install -y nodejs
   - npm install -g hexo-cli
   - npm install
