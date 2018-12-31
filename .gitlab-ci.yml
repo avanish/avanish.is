@@ -1,9 +1,5 @@
-image: ubuntu:18.04
+image: node:latest
 before_script:
-  - apt-get update
-  - apt-get install -y curl
-  - curl -sL https://deb.nodesource.com/setup_10.x
-  - apt-get install -y nodejs
   - npm install -g hexo-cli
   - npm install
 deploy_production:
