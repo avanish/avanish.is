@@ -8,7 +8,7 @@ expect << EOF
   expect "Enter passphrase for /home/travis/.ssh/avanish_rsa: "
   send $PASS\r
   expect eof
-  spwan git remote -v
+  spawn git remote -v
   expect eof
   spawn git push deploy master
   expect "Are you sure you want to continue connecting (yes/no)? "
