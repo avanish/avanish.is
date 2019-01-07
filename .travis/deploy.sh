@@ -8,7 +8,7 @@ expect << EOF
   expect "Enter passphrase for /home/travis/.ssh/avanish_rsa: "
   send $PASS\r
   expect eof
-  spawn git stash
+  spwan git remote -v
   expect eof
   spawn git push deploy master
   expect "Are you sure you want to continue connecting (yes/no)? "
@@ -21,6 +21,7 @@ ssh -t abu@$IP -i ~/.ssh/avanish_rsa <<EOF
   hexo clean
   hexo generate
   hexo deploy
+  git stash
 EOF
 
 # # eval "$(ssh-agent -s)" # Start ssh-agent cache
