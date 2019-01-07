@@ -3,8 +3,6 @@
 git config --global user.name 'Avanish Shrestha'
 git config --global user.email 'avanissh@gmail.com'
 git remote add deploy ssh://abu@$IP:$DEPLOY_DIR
-git remote -v
-git status
 expect << EOF
   spawn ssh-add /home/travis/.ssh/avanish_rsa
   expect "Enter passphrase for /home/travis/.ssh/avanish_rsa: "
@@ -20,7 +18,6 @@ EOF
 
 ssh -t abu@$IP -i ~/.ssh/avanish_rsa <<EOF
   cd $DEPLOY_DIR
-  npm install -y
   hexo clean
   hexo generate
   hexo deploy
