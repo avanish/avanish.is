@@ -35,4 +35,4 @@ jobs:
 
       - name: Deploy
         run: |
-          rsync -a --delete public/ /var/www/avanishshrestha.com/
+          cp -RT public/ /var/www/avanishshrestha.com/
