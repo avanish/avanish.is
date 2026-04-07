@@ -1,7 +1,6 @@
 ---
 title: OpenCV Installation
-date: 2019-01-16 09:17:10
-tags:
+date: 2019-01-16
 ---
 
 # Setup OpenCV on Windows

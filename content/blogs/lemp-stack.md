@@ -1,7 +1,6 @@
 ---
 title: LEMP Stack
-date: 2018-12-31 21:17:49
-tags:
+date: 2018-12-31
 ---
 
 ### Set locale
@@ -62,8 +61,8 @@ $ sudo mysql --user=root mysql
 ```
 
 ``` mysql
-> CREATE USER ‘admin’@‘localhost' IDENTIFIED BY 'some_pass';
-> GRANT ALL PRIVILEGES ON *.* TO ‘admin’@‘localhost' WITH GRANT OPTION;
+> CREATE USER 'admin'@'localhost' IDENTIFIED BY 'some_pass';
+> GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
 > FLUSH PRIVILEGES;
 ```
 
@@ -89,6 +88,6 @@ $ sudo swapon /var/swap.img
 ### Install Nodejs
 
 ``` bash
-$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+$ curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
 ```

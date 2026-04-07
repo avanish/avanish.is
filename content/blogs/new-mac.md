@@ -1,7 +1,6 @@
 ---
 title: New MAC Setup
-date: 2020-09-25 12:31:58
-tags:
+date: 2020-09-25
 ---
 
 # New Mac Setup

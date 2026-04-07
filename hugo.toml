@@ -1,0 +1,64 @@
+baseURL = "https://avanish.is/"
+languageCode = "en"
+title = "Avanish Shrestha"
+theme = "PaperMod"
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[params]
+  author = "Avanish Shrestha"
+  description = "Avanish Shrestha's personal site"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = false
+  DateFormat = "2006-01-02"
+
+  [params.homeInfoParams]
+    Title = "Hi, I'm Avanish Shrestha"
+    Content = """
+I'm a software engineer and entrepreneur based in Kathmandu, Nepal. I founded and run [Beam Lab](https://beamlab.co), a software development agency building and maintaining digital products for clients across Southeast Asia — primarily in Thailand. As CEO and Tech Lead, I lead a team of ~25 engineers, designers, and project managers while staying hands-on with architecture, infrastructure, DevOps, and code reviews. Our clients — including SparkJoy, Mplus Thailand, Praram Nine Technologies, and Baksters — trust us as long-term engineering partners.
+
+&nbsp;
+
+Outside of client work, I build side projects: [Muster](https://github.com/beamlabco/muster), a CLI-based standup and attendance tool in Go; Settledeck, a minimal IOU tracker PWA; and Laya, a kanban tool for small design studios. When I'm away from the keyboard, I'm on a morning walk, reading, or spending time with my kid. Reach me at [avanish@beamlab.co](mailto:avanish@beamlab.co).
+"""
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/avanish"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/avanishshrestha"
+
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:avanish@beamlab.co"
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+[menu]
+  [[menu.main]]
+    identifier = "blogs"
+    name = "Blog"
+    url = "/blogs/"
+    weight = 10
+  [[menu.main]]
+    identifier = "archives"
+    name = "Archive"
+    url = "/archives/"
+    weight = 20
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
